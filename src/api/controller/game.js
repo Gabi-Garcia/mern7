@@ -1,4 +1,5 @@
-const { setError } = require('../../config/error')
+const { setError } = require('../../config/error');
+const { deleteFile } = require('../../middlewares/deleteFile');
 const Game = require('../model/game');
 
 //GET TODOS LOS JUEGOS
@@ -25,9 +26,13 @@ const getGameById = async(req, res, next)=>{
 const createGame = async(req, res, next)=>{
     try {
         const newGame = new Game(req.body)
-        console.log('1: ', newGame)
+
+        if(req.file){
+            newGame.cover = req.file.path
+        }
+        // console.log('1: ', newGame)
         const gameBBDD = await newGame.save()
-        console.log('2: ', gameBBDD)
+        // console.log('2: ', gameBBDD)
         return res.status(201).json(gameBBDD)
     } catch (error) {
         return next(setError(400, "Can't create game 🤐"))
@@ -39,7 +44,16 @@ const updateGame = async(req, res, next)=>{
         const { id } = req.params;
         const oldGame = await Game.findById(id)
         const newGame = new Game(req.body)
+
+        if(req.file){
+            newGame.cover = req.file.path
+            if(oldGame.cover){
+                deleteFile(oldGame.cover)
+            }
+        }
         newGame._id = id
+        
+
 
        if(newGame.platforms){
         newGame.platforms = [... oldGame.platforms, ... newGame.platforms];
