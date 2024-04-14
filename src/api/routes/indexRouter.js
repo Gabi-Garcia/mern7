@@ -8,5 +8,5 @@ indexRouter.use("/games", gamesRoutes)
 indexRouter.use("/platforms", platformsRoutes)
 indexRouter.use("/users", userRoutes)
 
-
+ 
 module.exports = indexRouter
