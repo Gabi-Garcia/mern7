@@ -3,7 +3,7 @@ Endpoint principal:
 https://mern7.vercel.app/api/v1
 
 ********************************************************************************************************
-Endpoints para games: 
+Endpoints para games:
 
 GET
 https://mern7.vercel.app/api/v1/games  /*Método GET ME TRAIGO TODOS LOS JUEGOS*/
