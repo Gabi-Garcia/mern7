@@ -53,8 +53,6 @@ const updateGame = async(req, res, next)=>{
         }
         newGame._id = id
         
-
-
        if(newGame.platforms){
         newGame.platforms = [... oldGame.platforms, ... newGame.platforms];
        }
@@ -70,6 +68,11 @@ const deleteGame = async(req, res, next)=>{
     try {
         const { id } = req.params 
         const game = await Game.findByIdAndDelete(id)
+        /*deleteFile*/ 
+        if(game.cover){
+            deleteFile(game.cover)
+        }
+        /** */
         return res.status(200).json(game)
     } catch (error) {
         return next(setError(500, "Can't delete game 🤐"))

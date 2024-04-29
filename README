@@ -1,0 +1,54 @@
+<endpoints>
+Endpoint principal:
+https://mern7.vercel.app/api/v1
+
+********************************************************************************************************
+Endpoints para games: 
+
+GET
+https://mern7.vercel.app/api/v1/games  /*Método GET ME TRAIGO TODOS LOS JUEGOS*/
+https://mern7.vercel.app/api/v1/games/<AQUÍ COLOCAR EL ID DEL JUEGO/> /*Método GET ME TRAIGO UN JUEGO POR SU ID*/
+
+POST
+https://mern7.vercel.app/api/v1/games /*Método POST crea un nuevo juego, revisar el modelo para enviar correctamente
+el body */
+
+PUT
+vercel.app/api/v1/games/<AQUÍ COLOCAR EL ID DEL JUEGO/> /*Método PUT actualiza un juego por su ID, 
+revisar el modelo para enviar correctamente el campo a actualizar en el body */
+
+DELETE
+https://mern7.vercel.app/api/v1/games/<AQUÍ COLOCAR EL ID DEL JUEGO/> /*Método DELETE elimina un nuevo juego por su ID*/
+
+**********************************************************************************************************
+
+Endpoints para platforms:
+
+GET
+https://mern7.vercel.app/api/v1/platforms  /*Método GET ME TRAIGO TODAS LAS PLATFORMS*/
+https://mern7.vercel.app/api/v1/platforms/<AQUÍ COLOCAR EL ID DE LA PLATAFORMA /> /*Método GET ME TRAIGO UNA 
+PLATAFORMA POR SU ID*/
+
+POST
+https://mern7.vercel.app/api/v1/platforms  /*Método POST crea una nueva plataforma, revisar el modelo para enviar correctamente
+el body */
+
+PUT
+https://vercel.app/api/v1/platforms/<AQUÍ COLOCAR EL ID DE LA PLATAFORMA/> /*Método PUT actualiza una plataforma por su ID, 
+revisar el modelo para enviar correctamente el campo a actualizar en el body */
+
+DELETE
+https://mern7.vercel.app/api/v1/platforms/<AQUÍ COLOCAR EL ID DEL JUEGO/> /*Método DELETE elimina una plataforma por su ID*/
+
+**********************************************************************************************************
+Endpoints para users:
+
+POST
+https://mern7.vercel.app/api/v1/register  /*Método POST crea un nuevo user, revisar el modelo para enviar correctamente
+el body */
+
+https://mern7.vercel.app/api/v1/login  /*Método POST busca hacer login con un usuario ya registrado, revisar el modelo para enviar correctamente
+ los campos en el body */
+
+
+</endpoints>
