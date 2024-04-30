@@ -40,7 +40,7 @@ revisar el modelo para enviar correctamente el campo a actualizar en el body */
 DELETE
 https://mern7.vercel.app/api/v1/platforms/<AQUÍ COLOCAR EL ID DEL JUEGO/> /*Método DELETE elimina una plataforma por su ID*/
 
-*********************************************************
+**********************************************************************
 Endpoints para users:
 
 POST
